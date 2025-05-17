@@ -1,0 +1,24 @@
+<div class="register-page">
+  <section class="auth-card">
+    <h2>Crear cuenta</h2>
+    <p>Ingresa tus datos para registrarte</p>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input type="text" placeholder="Nombre" formControlName="firstName" />
+      <input type="text" placeholder="Apellido" formControlName="lastName" />
+      <input
+        type="email"
+        placeholder="Correo electrónico"
+        formControlName="email"
+      />
+      <input
+        type="password"
+        placeholder="Contraseña"
+        formControlName="password"
+      />
+      <button type="submit">Registrarse</button>
+    </form>
+    <p class="register-message">
+      ¿Ya tienes una cuenta? <a (click)="goToLogin()">Inicia sesión aquí</a>
+    </p>
+  </section>
+</div>

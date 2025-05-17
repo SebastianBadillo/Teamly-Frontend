@@ -1,0 +1,33 @@
+<!-- dashboard.component.html -->
+<div class="dashboard-wrapper">
+  <header class="dashboard-header">
+    <h2>Hola {{ user?.name }}!</h2>
+    <div class="header-actions">
+      <mat-icon>event</mat-icon>
+      <mat-icon>folder_open</mat-icon>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <section class="members-section">
+      <h3>Miembros</h3>
+      <ul>
+        <li *ngFor="let member of members" class="member-container">
+          <div>
+            {{ member?.name }}
+          </div>
+          <div class="icon-container">
+            <mat-icon>send</mat-icon>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="tasks-section">
+      <h3>Tareas</h3>
+      <ul>
+        <li *ngFor="let task of tasks">{{ task.title }}</li>
+      </ul>
+    </section>
+  </main>
+</div>

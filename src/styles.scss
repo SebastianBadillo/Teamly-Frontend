@@ -1,3 +1,4 @@
+@use "@angular/material" as mat;
 /* You can add global styles to this file, and also import other style files */
 html,
 body {
@@ -20,4 +21,85 @@ h1 {
 }
 p {
   font-size: 2.5rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root {
+  @include mat.snack-bar-overrides(
+    (
+      supporting-text-size: 1.4rem,
+
+      container-shape: none,
+    )
+  );
+}
+
+.snackbar-success {
+  .mat-mdc-snackbar-surface {
+    box-shadow: none !important;
+    background-color: #61c564 !important;
+  }
+  background-color: transparent !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  font-size: 1.4rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.snackbar-error {
+  .mat-mdc-snackbar-surface {
+    box-shadow: none !important;
+    background-color: #df584f !important;
+  }
+  background-color: transparent !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  font-size: 1.4rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+* {
+  font-family: "Monserrat", sans-serif !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+mat-icon {
+  font-family: "Material Icons" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+p {
+  margin: 0px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
 }

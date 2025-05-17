@@ -1,0 +1,74 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8, #e0e7ee);
+  font-family: "Inter", sans-serif;
+}
+.auth-card {
+  background: #fff;
+  width: 100%;
+  max-width: 400px;
+  margin: 5rem auto;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #1e1e1e;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    color: #666;
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    input {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 0.75rem;
+      font-size: 1.5rem;
+    }
+
+    button {
+      background: #55624c;
+      color: #fff;
+      padding: 0.8rem;
+      border: none;
+      font-size: 1.5rem;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      font-weight: 500;
+    }
+  }
+}
+.register-message {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  color: #666;
+  text-align: center;
+  text-align: center !important;
+  margin-bottom: 0.5rem !important;
+
+  a {
+    color: #55624c;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  a:hover {
+    cursor: pointer;
+  }
+}
