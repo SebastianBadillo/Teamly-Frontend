@@ -7,11 +7,12 @@ import SockJS from 'sockjs-client';
 @Injectable({
   providedIn: 'root'
 })
-export class ChatService {
+export class ChatService implements OnInit {
   private stompClient: any;
   private messageSubject: BehaviorSubject<ChatMessage[]> = new BehaviorSubject<ChatMessage[]>([]);
   constructor() {
-    this.initConnectionSocket();
+  }
+  ngOnInit(): void {
   }
 
   initConnectionSocket() {
@@ -21,7 +22,8 @@ export class ChatService {
 
   }
   joinRoom(roomId: string) {
-    this.stompClient.connect({}, () => {
+    this.stompClient.connect({}, (frame: any) => {
+      console.log('Connected: ' + frame);
       this.stompClient.subscribe(`/topic/${roomId}`, (messages: any) => {
         const messageContent = JSON.parse(messages.body);
         const currentMessages = this.messageSubject.getValue();

@@ -23,6 +23,8 @@ export class ChatComponent implements OnInit {
 
   ngOnInit() {
     this.userId = this.route.snapshot.params['userId'];
+    this.ChatService.initConnectionSocket();
+    console.log("userId", this.userId);
     this.ChatService.joinRoom("ABC");
     this.listenerMessage();
   }

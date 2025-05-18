@@ -13,10 +13,8 @@
       <h3>Miembros</h3>
       <ul>
         <li *ngFor="let member of members" class="member-container">
-          <div>
-            {{ member?.name }}
-          </div>
-          <div class="icon-container">
+          <div>{{ member?.firstName }} {{ member?.lastName }}</div>
+          <div class="icon-container" (click)="sendToChat(member?.id)">
             <mat-icon>send</mat-icon>
           </div>
         </li>
