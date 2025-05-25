@@ -1,0 +1,88 @@
+.dialog-container {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+h2,
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+input[type="text"],
+input[type="file"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+}
+
+button {
+  background-color: #55624c;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.file-section {
+  margin-top: 1.5rem;
+}
+
+.file-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.file-list li {
+  background-color: #eee;
+  padding: 0.8rem;
+  margin-bottom: 0.6rem;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions button {
+  background: transparent;
+  color: #333;
+  font-size: 1.2rem;
+  padding: 0 0.3rem;
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: right;
+}
+p,
+label {
+  font-size: 1.4rem;
+}
+li {
+  font-size: 1.2rem;
+}
+
+.no-border {
+  border: 0px !important;
+}
+hr {
+  margin-top: 10px;
+}

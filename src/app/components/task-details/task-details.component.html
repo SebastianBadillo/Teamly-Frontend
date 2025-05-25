@@ -1,0 +1,27 @@
+<div class="task-details-container">
+  <h2 class="task-title">{{ data.name }}</h2>
+
+  <div class="task-detail">
+    <span class="label">Descripción:</span>
+    <span class="value">{{ data.description }}</span>
+  </div>
+
+  <div class="task-detail">
+    <span class="label">Prioridad:</span>
+    <span class="value">{{ data.priority }}</span>
+  </div>
+
+  <div class="task-detail">
+    <span class="label">Asignado a:</span>
+    <span class="value">{{ data.assignedUserName || "Sin asignar" }}</span>
+  </div>
+
+  <div class="task-detail">
+    <span class="label">Fecha límite:</span>
+    <span class="value">{{ data.deadline | date : "dd/MM/yyyy" }}</span>
+  </div>
+
+  <div class="dialog-actions">
+    <button (click)="close()">close</button>
+  </div>
+</div>

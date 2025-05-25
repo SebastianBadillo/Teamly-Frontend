@@ -4,7 +4,7 @@
     <h2>Hola {{ user?.name }}!</h2>
     <div class="header-actions">
       <mat-icon>event</mat-icon>
-      <mat-icon>folder_open</mat-icon>
+      <mat-icon (click)="openUploadDialog()">folder_open</mat-icon>
     </div>
   </header>
 
@@ -15,16 +15,24 @@
         <li *ngFor="let member of members" class="member-container">
           <div>{{ member?.firstName }} {{ member?.lastName }}</div>
           <div class="icon-container" (click)="sendToChat(member?.id)">
-            <mat-icon>send</mat-icon>
+            <mat-icon>sms</mat-icon>
           </div>
         </li>
       </ul>
     </section>
 
     <section class="tasks-section">
-      <h3>Tareas</h3>
+      <div class="tasks-header">
+        <h3>Tareas</h3>
+        <div class="icon-container">
+          <mat-icon (click)="openTaskDialog()">add_circle</mat-icon>
+        </div>
+      </div>
+      <!-- <button (click)="openTaskDialog()" >Crear task</button> -->
       <ul>
-        <li *ngFor="let task of tasks">{{ task.title }}</li>
+        <li *ngFor="let task of tasks" (click)="openTaskDetails(task)">
+          {{ task.name }}
+        </li>
       </ul>
     </section>
   </main>

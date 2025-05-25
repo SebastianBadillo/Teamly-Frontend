@@ -1,0 +1,31 @@
+<h2>Agregar Tarea</h2>
+
+<form [formGroup]="taskForm">
+  <label>Título</label>
+  <input formControlName="name" />
+
+  <label>Descripción</label>
+  <textarea formControlName="description"></textarea>
+
+  <label>Prioridad</label>
+  <select formControlName="priority">
+    <option value="">Seleccionar</option>
+    <option value="Alta">Alta</option>
+    <option value="Media">Media</option>
+    <option value="Baja">Baja</option>
+  </select>
+
+  <label>Fecha límite</label>
+  <input type="date" formControlName="deadline" />
+
+  <label for="user">Asignar a</label>
+  <select id="user" formControlName="assignedUserId" class="task-select">
+    <option value="" disabled selected>Seleccionar usuario</option>
+    <option *ngFor="let user of users" [value]="user.id">
+      {{ user.firstName }} {{ user.lastName }}
+    </option>
+  </select>
+
+  <button type="submit" (click)="saveTask()">Guardar</button>
+  <button type="button" (click)="cancel()">Cancelar</button>
+</form>

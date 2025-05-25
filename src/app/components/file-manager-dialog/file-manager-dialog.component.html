@@ -1,0 +1,33 @@
+<div class="dialog-container">
+  <h2>Gestión de Archivos</h2>
+
+  <form [formGroup]="fileForm" (ngSubmit)="uploadFile()" class="form">
+    <label for="description">Descripción</label>
+    <input type="text" formControlName="description" />
+
+    <label for="file">Selecciona un archivo</label>
+    <input type="file" class="no-border" (change)="onFileSelected($event)" />
+
+    <button type="submit" [disabled]="!selectedFile">Subir</button>
+  </form>
+
+  <hr />
+
+  <div class="file-section">
+    <h3>Archivos disponibles</h3>
+    <ul *ngIf="files.length > 0" class="file-list">
+      <li *ngFor="let file of files">
+        {{ file.description }}
+        <div class="actions">
+          <button (click)="downloadFile(file.id)">📥</button>
+          <button (click)="deleteFile(file.id)">🗑️</button>
+        </div>
+      </li>
+    </ul>
+    <p *ngIf="files.length === 0">No hay archivos.</p>
+  </div>
+
+  <div class="footer">
+    <button (click)="closeDialog()">Cerrar</button>
+  </div>
+</div>
